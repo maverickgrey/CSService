@@ -1,4 +1,8 @@
-Flask
-Flask-SQLAlchemy
 gunicorn
+uvicorn
 gevent
+fastapi
+transformers
+numpy
+pandas
+pydantic

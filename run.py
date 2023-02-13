@@ -10,10 +10,10 @@
 ------------------------------------------
 @Description:
 """
-from app import create_app
+from fastapi import FastAPI
 
 # 加载
-app = create_app()
+app = FastAPI()
 
 if __name__ == '__main__':
     app.run()

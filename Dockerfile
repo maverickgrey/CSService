@@ -1,5 +1,5 @@
 ################################################
-#                This Dockerfil                #
+#               This Dockerfile                #
 ################################################
 
 # 指定基础镜像
@@ -16,16 +16,19 @@ WORKDIR /projects
 
 # 复制本地文件（相对路径）到容器
 #   COPY <src> <dest>
-COPY ./ FlaskAPIProjectTemplate/
+COPY ./ CodeSearchBackEnd/
 
 # 指定工作目录
 #   WORKDIR <path>
-WORKDIR /projects/FlaskAPIProjectTemplate
+WORKDIR /projects/CodeSearchBackEnd
 
 # 执行指令
 #   RUN <command>
 RUN pip install -r requirements.txt
 
-EXPOSE 5000
+RUN pip3 install torch torchvision torchaudio --extra-index-url https://download.pytorch.org/whl/cpu
 
-ENTRYPOINT [ "gunicorn", "-c", "gunicorn.conf.py", "run:app" ]
+EXPOSE 8000
+
+ENTRYPOINT [ "gunicorn", "-c", "gunicorn.conf.py", "app.main:app" ]
+# ENTRYPOINT [ "uvicorn","--host","0.0.0.0","--port","8000","app.main:app" ]

@@ -17,4 +17,9 @@ ROOT_DIR = os.path.dirname(os.path.abspath(__file__))  # This is your Project Ro
 
 DATA_DIR = str(Path(ROOT_DIR) / "data")  # This is the data of this project
 OUTPUT_DIR = str(Path(ROOT_DIR) / "output")  # This is the output of this project
+MODEL_DIR = str(Path(ROOT_DIR) / "data/model_saved")
+CODE_DIR = str(Path(ROOT_DIR) / "data/code_snippets")
+CODE_VEC_DIR = str(Path(ROOT_DIR) / "data/code_vec")
+
+
 # LOG_DIR = str(Path(ROOT_DIR) / "log")  # This is the log of this project
